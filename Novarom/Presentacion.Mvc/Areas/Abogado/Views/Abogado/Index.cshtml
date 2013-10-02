@@ -1,0 +1,52 @@
+﻿
+@using App.Domain.Entities
+@model dynamic
+
+@{
+    ViewBag.Title = "Abogados";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{ IEnumerable<Abogados> model = ViewBag.ListaAbogados; }
+<h2>title</h2>
+<table>
+
+
+    @foreach (var item in model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellidos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroIdentificacion)
+            </td>
+            <td>
+                <button type="button" class="btn btn-primary ui-icon-alert" data-loading-text="Loading..." onclick="adminabogados.Delete('@item.IdAbogado')">Eliminar</button>
+                <button type="button" class="btn btn-primary ui-icon-alert" data-loading-text="Loading..." onclick="adminabogados.Detalle('@item.IdAbogado')">Detalles</button>
+                <button type="button" class="btn btn-primary ui-icon-alert" data-loading-text="Loading..." onclick="adminabogados.Editar('@item.IdAbogado')">Detalles</button>
+                
+            </td>
+        </tr>
+    }
+</table>
+<script>
+    $(document).ready(function () {
+        alert('ok');
+    });
+    var adminabogados = {
+        //Private Property
+        amountOfGrease: "1 Cup",
+        Delete: function(e) {
+            ObtenerDatosServidor('@Url.Action("Delete", "Abogado", new { area = "Abogado" })', { id: e }, function (dt) {
+                alert(dt);
+            });
+        },
+        Detalle: function (e) { alert(e); },
+        Editar:function(e){alert(e);}
+        //Public Method
+        
+    };
+
+</script>

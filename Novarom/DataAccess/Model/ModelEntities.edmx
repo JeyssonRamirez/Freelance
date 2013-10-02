@@ -1,0 +1,1031 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ModelEntities.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="ModelEntitiesStoreContainer">
+          <EntitySet Name="Aplicacion" EntityType="ModelEntities.Store.Aplicacion" store:Type="Tables" Schema="adm" />
+          <EntitySet Name="ErrorAplicacion" EntityType="ModelEntities.Store.ErrorAplicacion" store:Type="Tables" Schema="adm" />
+          <EntitySet Name="Membresia" EntityType="ModelEntities.Store.Membresia" store:Type="Tables" Schema="adm" />
+          <EntitySet Name="Perfil" EntityType="ModelEntities.Store.Perfil" store:Type="Tables" Schema="adm" />
+          <EntitySet Name="Propiedad" EntityType="ModelEntities.Store.Propiedad" store:Type="Tables" Schema="adm" />
+          <EntitySet Name="Rol" EntityType="ModelEntities.Store.Rol" store:Type="Tables" Schema="adm" />
+          <EntitySet Name="RolPropiedad" EntityType="ModelEntities.Store.RolPropiedad" store:Type="Tables" Schema="adm" />
+          <EntitySet Name="RolUsuario" EntityType="ModelEntities.Store.RolUsuario" store:Type="Tables" Schema="adm" />
+          <EntitySet Name="SiteMap" EntityType="ModelEntities.Store.SiteMap" store:Type="Tables" Schema="adm" />
+          <EntitySet Name="Usuario" EntityType="ModelEntities.Store.Usuario" store:Type="Tables" Schema="adm" />
+          <EntitySet Name="ValorPropiedad" EntityType="ModelEntities.Store.ValorPropiedad" store:Type="Tables" Schema="adm" />
+          <EntitySet Name="Abogados" EntityType="ModelEntities.Store.Abogados" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DamandasAbogados" EntityType="ModelEntities.Store.DamandasAbogados" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Demandas" EntityType="ModelEntities.Store.Demandas" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Etapas" EntityType="ModelEntities.Store.Etapas" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EtapasDemandas" EntityType="ModelEntities.Store.EtapasDemandas" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_DamandasAbogados_Abogados" Association="ModelEntities.Store.FK_DamandasAbogados_Abogados">
+            <End Role="Abogados" EntitySet="Abogados" />
+            <End Role="DamandasAbogados" EntitySet="DamandasAbogados" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DamandasAbogados_Demandas" Association="ModelEntities.Store.FK_DamandasAbogados_Demandas">
+            <End Role="Demandas" EntitySet="Demandas" />
+            <End Role="DamandasAbogados" EntitySet="DamandasAbogados" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EtapasDemandas_Etapas" Association="ModelEntities.Store.FK_EtapasDemandas_Etapas">
+            <End Role="Etapas" EntitySet="Etapas" />
+            <End Role="EtapasDemandas" EntitySet="EtapasDemandas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Membresia_Usuario" Association="ModelEntities.Store.FK_Membresia_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Membresia" EntitySet="Membresia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Perfil_Usuario" Association="ModelEntities.Store.FK_Perfil_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Perfil" EntitySet="Perfil" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RolPropiedad_Propiedad" Association="ModelEntities.Store.FK_RolPropiedad_Propiedad">
+            <End Role="Propiedad" EntitySet="Propiedad" />
+            <End Role="RolPropiedad" EntitySet="RolPropiedad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RolPropiedad_Rol" Association="ModelEntities.Store.FK_RolPropiedad_Rol">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="RolPropiedad" EntitySet="RolPropiedad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RolUsuario_Rol" Association="ModelEntities.Store.FK_RolUsuario_Rol">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="RolUsuario" EntitySet="RolUsuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RolUsuario_Usuario" Association="ModelEntities.Store.FK_RolUsuario_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="RolUsuario" EntitySet="RolUsuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ValorPropiedad_Propiedad" Association="ModelEntities.Store.FK_ValorPropiedad_Propiedad">
+            <End Role="Propiedad" EntitySet="Propiedad" />
+            <End Role="ValorPropiedad" EntitySet="ValorPropiedad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ValorPropiedad_Usuario" Association="ModelEntities.Store.FK_ValorPropiedad_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="ValorPropiedad" EntitySet="ValorPropiedad" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Aplicacion">
+          <Key>
+            <PropertyRef Name="AplicacionId" />
+          </Key>
+          <Property Name="AplicacionId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="ErrorAplicacion">
+          <Key>
+            <PropertyRef Name="ErrorAplicacionId" />
+          </Key>
+          <Property Name="ErrorAplicacionId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Aplicacion" Type="nvarchar" MaxLength="256" />
+          <Property Name="Error" Type="nvarchar" MaxLength="512" />
+          <Property Name="Excepcion" Type="text" />
+          <Property Name="Interna" Type="text" />
+          <Property Name="Registrado" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Membresia">
+          <Key>
+            <PropertyRef Name="MembresiaId" />
+          </Key>
+          <Property Name="MembresiaId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AplicacionId" Type="int" Nullable="false" />
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="PreguntaPassword" Type="nvarchar" MaxLength="256" />
+          <Property Name="RespuestaPassword" Type="nvarchar" MaxLength="256" />
+          <Property Name="Comentario" Type="nvarchar" MaxLength="512" />
+          <Property Name="UltimaActividad" Type="datetime" Nullable="false" />
+          <Property Name="UltimaSesion" Type="datetime" Nullable="false" />
+          <Property Name="UltimoCambioDePassword" Type="datetime" Nullable="false" />
+          <Property Name="CantidadIntentosFallidosPassword" Type="int" Nullable="false" />
+          <Property Name="InicioIntentosFallidosPassword" Type="datetime" Nullable="false" />
+          <Property Name="CantidadIntentosFallidosPregunta" Type="int" Nullable="false" />
+          <Property Name="InicioIntentosFallidosPregunta" Type="datetime" Nullable="false" />
+          <Property Name="EstaAprobado" Type="bit" Nullable="false" />
+          <Property Name="EstaBloqueado" Type="bit" Nullable="false" />
+          <Property Name="UltimoBloqueo" Type="datetime" Nullable="false" />
+          <Property Name="Registrado" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Perfil">
+          <Key>
+            <PropertyRef Name="PerfilId" />
+          </Key>
+          <Property Name="PerfilId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AplicacionId" Type="int" Nullable="false" />
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+          <Property Name="UltimaActividad" Type="datetime" Nullable="false" />
+          <Property Name="UltimaActualizacion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Propiedad">
+          <Key>
+            <PropertyRef Name="PropiedadId" />
+          </Key>
+          <Property Name="PropiedadId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="Tipo" Type="nvarchar" Nullable="false" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="RolId" />
+          </Key>
+          <Property Name="RolId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AplicacionId" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="RolPropiedad">
+          <Key>
+            <PropertyRef Name="RolPropiedadId" />
+          </Key>
+          <Property Name="RolPropiedadId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RolId" Type="int" Nullable="false" />
+          <Property Name="PropiedadId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RolUsuario">
+          <Key>
+            <PropertyRef Name="RolUsuarioId" />
+          </Key>
+          <Property Name="RolUsuarioId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+          <Property Name="RolId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SiteMap">
+          <Key>
+            <PropertyRef Name="SiteMapId" />
+          </Key>
+          <Property Name="SiteMapId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AplicacionId" Type="int" Nullable="false" />
+          <Property Name="Titulo" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="512" />
+          <Property Name="Url" Type="nvarchar" MaxLength="512" />
+          <Property Name="Roles" Type="nvarchar" MaxLength="512" />
+          <Property Name="PadreId" Type="int" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="UsuarioId" />
+          </Key>
+          <Property Name="UsuarioId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProviderUserKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Login" Type="nvarchar" Nullable="false" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="ValorPropiedad">
+          <Key>
+            <PropertyRef Name="UsuarioId" />
+            <PropertyRef Name="PropiedadId" />
+          </Key>
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+          <Property Name="PropiedadId" Type="int" Nullable="false" />
+          <Property Name="Valor" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Abogados">
+          <Key>
+            <PropertyRef Name="IdAbogado" />
+          </Key>
+          <Property Name="IdAbogado" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombres" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Apellidos" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="NumeroIdentificacion" Type="nvarchar" Nullable="false" MaxLength="25" />
+          <Property Name="CiudadExpedicion" Type="nvarchar" Nullable="false" MaxLength="45" />
+          <Property Name="TarjetaProfesional" Type="nvarchar" Nullable="false" MaxLength="25" />
+          <Property Name="Telefono1" Type="nvarchar" MaxLength="15" />
+          <Property Name="Telefono2" Type="nvarchar" MaxLength="15" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Direccion" Type="nvarchar" MaxLength="60" />
+          <Property Name="Descripcion" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="UsuarioCrea" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="FechaCrea" Type="datetime" Nullable="false" />
+          <Property Name="UsuarioModifica" Type="nvarchar" MaxLength="250" />
+          <Property Name="FechaModifica" Type="datetime" />
+        </EntityType>
+        <EntityType Name="DamandasAbogados">
+          <Key>
+            <PropertyRef Name="IdDemandaAbogado" />
+          </Key>
+          <Property Name="IdDemandaAbogado" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdAbogado" Type="int" Nullable="false" />
+          <Property Name="IdDemanda" Type="int" Nullable="false" />
+          <Property Name="UsuarioCrea" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="FechaCrea" Type="datetime" Nullable="false" />
+          <Property Name="UsuarioModifica" Type="nvarchar" MaxLength="250" />
+          <Property Name="FechaModifica" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Demandas">
+          <Key>
+            <PropertyRef Name="IdDemanda" />
+          </Key>
+          <Property Name="IdDemanda" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdUsuario" Type="int" Nullable="false" />
+          <Property Name="NombreDemanda" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="FechaRadicacion" Type="datetime" />
+          <Property Name="FechaAdicion" Type="datetime" />
+          <Property Name="NumeroProceso" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fechacontestacion" Type="datetime" />
+          <Property Name="UsuarioCrea" Type="nvarchar" MaxLength="250" />
+          <Property Name="FechaCrea" Type="datetime" Nullable="false" />
+          <Property Name="UsuarioModifica" Type="nvarchar" MaxLength="250" />
+          <Property Name="FechaModifica" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Etapas">
+          <Key>
+            <PropertyRef Name="IdEtapa" />
+          </Key>
+          <Property Name="IdEtapa" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="FechaCreate" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EtapasDemandas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdEtapa" Type="int" Nullable="false" />
+          <Property Name="IdDemanda" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_DamandasAbogados_Abogados">
+          <End Role="Abogados" Type="ModelEntities.Store.Abogados" Multiplicity="1" />
+          <End Role="DamandasAbogados" Type="ModelEntities.Store.DamandasAbogados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Abogados">
+              <PropertyRef Name="IdAbogado" />
+            </Principal>
+            <Dependent Role="DamandasAbogados">
+              <PropertyRef Name="IdAbogado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DamandasAbogados_Demandas">
+          <End Role="Demandas" Type="ModelEntities.Store.Demandas" Multiplicity="1" />
+          <End Role="DamandasAbogados" Type="ModelEntities.Store.DamandasAbogados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Demandas">
+              <PropertyRef Name="IdDemanda" />
+            </Principal>
+            <Dependent Role="DamandasAbogados">
+              <PropertyRef Name="IdDemanda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EtapasDemandas_Etapas">
+          <End Role="Etapas" Type="ModelEntities.Store.Etapas" Multiplicity="1" />
+          <End Role="EtapasDemandas" Type="ModelEntities.Store.EtapasDemandas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Etapas">
+              <PropertyRef Name="IdEtapa" />
+            </Principal>
+            <Dependent Role="EtapasDemandas">
+              <PropertyRef Name="IdEtapa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Membresia_Usuario">
+          <End Role="Usuario" Type="ModelEntities.Store.Usuario" Multiplicity="1" />
+          <End Role="Membresia" Type="ModelEntities.Store.Membresia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UsuarioId" />
+            </Principal>
+            <Dependent Role="Membresia">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Perfil_Usuario">
+          <End Role="Usuario" Type="ModelEntities.Store.Usuario" Multiplicity="1" />
+          <End Role="Perfil" Type="ModelEntities.Store.Perfil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UsuarioId" />
+            </Principal>
+            <Dependent Role="Perfil">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RolPropiedad_Propiedad">
+          <End Role="Propiedad" Type="ModelEntities.Store.Propiedad" Multiplicity="1" />
+          <End Role="RolPropiedad" Type="ModelEntities.Store.RolPropiedad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Propiedad">
+              <PropertyRef Name="PropiedadId" />
+            </Principal>
+            <Dependent Role="RolPropiedad">
+              <PropertyRef Name="PropiedadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RolPropiedad_Rol">
+          <End Role="Rol" Type="ModelEntities.Store.Rol" Multiplicity="1" />
+          <End Role="RolPropiedad" Type="ModelEntities.Store.RolPropiedad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="RolId" />
+            </Principal>
+            <Dependent Role="RolPropiedad">
+              <PropertyRef Name="RolId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RolUsuario_Rol">
+          <End Role="Rol" Type="ModelEntities.Store.Rol" Multiplicity="1" />
+          <End Role="RolUsuario" Type="ModelEntities.Store.RolUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="RolId" />
+            </Principal>
+            <Dependent Role="RolUsuario">
+              <PropertyRef Name="RolId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RolUsuario_Usuario">
+          <End Role="Usuario" Type="ModelEntities.Store.Usuario" Multiplicity="1" />
+          <End Role="RolUsuario" Type="ModelEntities.Store.RolUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UsuarioId" />
+            </Principal>
+            <Dependent Role="RolUsuario">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ValorPropiedad_Propiedad">
+          <End Role="Propiedad" Type="ModelEntities.Store.Propiedad" Multiplicity="1" />
+          <End Role="ValorPropiedad" Type="ModelEntities.Store.ValorPropiedad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Propiedad">
+              <PropertyRef Name="PropiedadId" />
+            </Principal>
+            <Dependent Role="ValorPropiedad">
+              <PropertyRef Name="PropiedadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ValorPropiedad_Usuario">
+          <End Role="Usuario" Type="ModelEntities.Store.Usuario" Multiplicity="1" />
+          <End Role="ValorPropiedad" Type="ModelEntities.Store.ValorPropiedad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UsuarioId" />
+            </Principal>
+            <Dependent Role="ValorPropiedad">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ModelEntities" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="ModelEntitiesContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Aplicacion" EntityType="ModelEntities.Aplicacion" />
+          <EntitySet Name="ErrorAplicacion" EntityType="ModelEntities.ErrorAplicacion" />
+          <EntitySet Name="Membresia" EntityType="ModelEntities.Membresia" />
+          <EntitySet Name="Perfil" EntityType="ModelEntities.Perfil" />
+          <EntitySet Name="Propiedad" EntityType="ModelEntities.Propiedad" />
+          <EntitySet Name="Rol" EntityType="ModelEntities.Rol" />
+          <EntitySet Name="RolPropiedad" EntityType="ModelEntities.RolPropiedad" />
+          <EntitySet Name="RolUsuario" EntityType="ModelEntities.RolUsuario" />
+          <EntitySet Name="SiteMap" EntityType="ModelEntities.SiteMap" />
+          <EntitySet Name="Usuario" EntityType="ModelEntities.Usuario" />
+          <EntitySet Name="ValorPropiedad" EntityType="ModelEntities.ValorPropiedad" />
+          <EntitySet Name="Abogados" EntityType="ModelEntities.Abogados" />
+          <EntitySet Name="DamandasAbogados" EntityType="ModelEntities.DamandasAbogados" />
+          <EntitySet Name="Demandas" EntityType="ModelEntities.Demandas" />
+          <EntitySet Name="Etapas" EntityType="ModelEntities.Etapas" />
+          <EntitySet Name="EtapasDemandas" EntityType="ModelEntities.EtapasDemandas" />
+          <AssociationSet Name="FK_Membresia_Usuario" Association="ModelEntities.FK_Membresia_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Membresia" EntitySet="Membresia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Perfil_Usuario" Association="ModelEntities.FK_Perfil_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Perfil" EntitySet="Perfil" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RolPropiedad_Propiedad" Association="ModelEntities.FK_RolPropiedad_Propiedad">
+            <End Role="Propiedad" EntitySet="Propiedad" />
+            <End Role="RolPropiedad" EntitySet="RolPropiedad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ValorPropiedad_Propiedad" Association="ModelEntities.FK_ValorPropiedad_Propiedad">
+            <End Role="Propiedad" EntitySet="Propiedad" />
+            <End Role="ValorPropiedad" EntitySet="ValorPropiedad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RolPropiedad_Rol" Association="ModelEntities.FK_RolPropiedad_Rol">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="RolPropiedad" EntitySet="RolPropiedad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RolUsuario_Rol" Association="ModelEntities.FK_RolUsuario_Rol">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="RolUsuario" EntitySet="RolUsuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RolUsuario_Usuario" Association="ModelEntities.FK_RolUsuario_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="RolUsuario" EntitySet="RolUsuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ValorPropiedad_Usuario" Association="ModelEntities.FK_ValorPropiedad_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="ValorPropiedad" EntitySet="ValorPropiedad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DamandasAbogados_Abogados" Association="ModelEntities.FK_DamandasAbogados_Abogados">
+            <End Role="Abogados" EntitySet="Abogados" />
+            <End Role="DamandasAbogados" EntitySet="DamandasAbogados" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DamandasAbogados_Demandas" Association="ModelEntities.FK_DamandasAbogados_Demandas">
+            <End Role="Demandas" EntitySet="Demandas" />
+            <End Role="DamandasAbogados" EntitySet="DamandasAbogados" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EtapasDemandas_Etapas" Association="ModelEntities.FK_EtapasDemandas_Etapas">
+            <End Role="Etapas" EntitySet="Etapas" />
+            <End Role="EtapasDemandas" EntitySet="EtapasDemandas" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Aplicacion">
+          <Key>
+            <PropertyRef Name="AplicacionId" />
+          </Key>
+          <Property Type="Int32" Name="AplicacionId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ErrorAplicacion">
+          <Key>
+            <PropertyRef Name="ErrorAplicacionId" />
+          </Key>
+          <Property Type="Int32" Name="ErrorAplicacionId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Aplicacion" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Error" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Excepcion" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Interna" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Registrado" Precision="3" />
+        </EntityType>
+        <EntityType Name="Membresia">
+          <Key>
+            <PropertyRef Name="MembresiaId" />
+          </Key>
+          <Property Type="Int32" Name="MembresiaId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="AplicacionId" Nullable="false" />
+          <Property Type="Int32" Name="UsuarioId" Nullable="false" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PreguntaPassword" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="RespuestaPassword" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Comentario" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="UltimaActividad" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="UltimaSesion" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="UltimoCambioDePassword" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="CantidadIntentosFallidosPassword" Nullable="false" />
+          <Property Type="DateTime" Name="InicioIntentosFallidosPassword" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="CantidadIntentosFallidosPregunta" Nullable="false" />
+          <Property Type="DateTime" Name="InicioIntentosFallidosPregunta" Nullable="false" Precision="3" />
+          <Property Type="Boolean" Name="EstaAprobado" Nullable="false" />
+          <Property Type="Boolean" Name="EstaBloqueado" Nullable="false" />
+          <Property Type="DateTime" Name="UltimoBloqueo" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="Registrado" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Usuario" Relationship="ModelEntities.FK_Membresia_Usuario" FromRole="Membresia" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Perfil">
+          <Key>
+            <PropertyRef Name="PerfilId" />
+          </Key>
+          <Property Type="Int32" Name="PerfilId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="AplicacionId" Nullable="false" />
+          <Property Type="Int32" Name="UsuarioId" Nullable="false" />
+          <Property Type="DateTime" Name="UltimaActividad" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="UltimaActualizacion" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Usuario" Relationship="ModelEntities.FK_Perfil_Usuario" FromRole="Perfil" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Propiedad">
+          <Key>
+            <PropertyRef Name="PropiedadId" />
+          </Key>
+          <Property Type="Int32" Name="PropiedadId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Tipo" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="RolPropiedad" Relationship="ModelEntities.FK_RolPropiedad_Propiedad" FromRole="Propiedad" ToRole="RolPropiedad" />
+          <NavigationProperty Name="ValorPropiedad" Relationship="ModelEntities.FK_ValorPropiedad_Propiedad" FromRole="Propiedad" ToRole="ValorPropiedad" />
+        </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="RolId" />
+          </Key>
+          <Property Type="Int32" Name="RolId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="AplicacionId" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="RolPropiedad" Relationship="ModelEntities.FK_RolPropiedad_Rol" FromRole="Rol" ToRole="RolPropiedad" />
+          <NavigationProperty Name="RolUsuario" Relationship="ModelEntities.FK_RolUsuario_Rol" FromRole="Rol" ToRole="RolUsuario" />
+        </EntityType>
+        <EntityType Name="RolPropiedad">
+          <Key>
+            <PropertyRef Name="RolPropiedadId" />
+          </Key>
+          <Property Type="Int32" Name="RolPropiedadId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="RolId" Nullable="false" />
+          <Property Type="Int32" Name="PropiedadId" Nullable="false" />
+          <NavigationProperty Name="Propiedad" Relationship="ModelEntities.FK_RolPropiedad_Propiedad" FromRole="RolPropiedad" ToRole="Propiedad" />
+          <NavigationProperty Name="Rol" Relationship="ModelEntities.FK_RolPropiedad_Rol" FromRole="RolPropiedad" ToRole="Rol" />
+        </EntityType>
+        <EntityType Name="RolUsuario">
+          <Key>
+            <PropertyRef Name="RolUsuarioId" />
+          </Key>
+          <Property Type="Int32" Name="RolUsuarioId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UsuarioId" Nullable="false" />
+          <Property Type="Int32" Name="RolId" Nullable="false" />
+          <NavigationProperty Name="Rol" Relationship="ModelEntities.FK_RolUsuario_Rol" FromRole="RolUsuario" ToRole="Rol" />
+          <NavigationProperty Name="Usuario" Relationship="ModelEntities.FK_RolUsuario_Usuario" FromRole="RolUsuario" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="SiteMap">
+          <Key>
+            <PropertyRef Name="SiteMapId" />
+          </Key>
+          <Property Type="Int32" Name="SiteMapId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="AplicacionId" Nullable="false" />
+          <Property Type="String" Name="Titulo" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Descripcion" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Url" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Roles" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="PadreId" />
+          <Property Type="Boolean" Name="Activo" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="UsuarioId" />
+          </Key>
+          <Property Type="Int32" Name="UsuarioId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Guid" Name="ProviderUserKey" Nullable="false" />
+          <Property Type="String" Name="Login" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Membresia" Relationship="ModelEntities.FK_Membresia_Usuario" FromRole="Usuario" ToRole="Membresia" />
+          <NavigationProperty Name="Perfil" Relationship="ModelEntities.FK_Perfil_Usuario" FromRole="Usuario" ToRole="Perfil" />
+          <NavigationProperty Name="RolUsuario" Relationship="ModelEntities.FK_RolUsuario_Usuario" FromRole="Usuario" ToRole="RolUsuario" />
+          <NavigationProperty Name="ValorPropiedad" Relationship="ModelEntities.FK_ValorPropiedad_Usuario" FromRole="Usuario" ToRole="ValorPropiedad" />
+        </EntityType>
+        <EntityType Name="ValorPropiedad">
+          <Key>
+            <PropertyRef Name="UsuarioId" />
+            <PropertyRef Name="PropiedadId" />
+          </Key>
+          <Property Type="Int32" Name="UsuarioId" Nullable="false" />
+          <Property Type="Int32" Name="PropiedadId" Nullable="false" />
+          <Property Type="String" Name="Valor" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Propiedad" Relationship="ModelEntities.FK_ValorPropiedad_Propiedad" FromRole="ValorPropiedad" ToRole="Propiedad" />
+          <NavigationProperty Name="Usuario" Relationship="ModelEntities.FK_ValorPropiedad_Usuario" FromRole="ValorPropiedad" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Abogados">
+          <Key>
+            <PropertyRef Name="IdAbogado" />
+          </Key>
+          <Property Type="Int32" Name="IdAbogado" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nombres" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Apellidos" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NumeroIdentificacion" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CiudadExpedicion" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TarjetaProfesional" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Telefono1" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Telefono2" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Direccion" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UsuarioCrea" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="FechaCrea" Nullable="false" Precision="3" />
+          <Property Type="String" Name="UsuarioModifica" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="FechaModifica" Precision="3" />
+          <NavigationProperty Name="DamandasAbogados" Relationship="ModelEntities.FK_DamandasAbogados_Abogados" FromRole="Abogados" ToRole="DamandasAbogados" />
+        </EntityType>
+        <EntityType Name="DamandasAbogados">
+          <Key>
+            <PropertyRef Name="IdDemandaAbogado" />
+          </Key>
+          <Property Type="Int32" Name="IdDemandaAbogado" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="IdAbogado" Nullable="false" />
+          <Property Type="Int32" Name="IdDemanda" Nullable="false" />
+          <Property Type="String" Name="UsuarioCrea" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="FechaCrea" Nullable="false" Precision="3" />
+          <Property Type="String" Name="UsuarioModifica" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="FechaModifica" Precision="3" />
+          <NavigationProperty Name="Abogados" Relationship="ModelEntities.FK_DamandasAbogados_Abogados" FromRole="DamandasAbogados" ToRole="Abogados" />
+          <NavigationProperty Name="Demandas" Relationship="ModelEntities.FK_DamandasAbogados_Demandas" FromRole="DamandasAbogados" ToRole="Demandas" />
+        </EntityType>
+        <EntityType Name="Demandas">
+          <Key>
+            <PropertyRef Name="IdDemanda" />
+          </Key>
+          <Property Type="Int32" Name="IdDemanda" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="IdUsuario" Nullable="false" />
+          <Property Type="String" Name="NombreDemanda" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="FechaRadicacion" Precision="3" />
+          <Property Type="DateTime" Name="FechaAdicion" Precision="3" />
+          <Property Type="String" Name="NumeroProceso" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Fechacontestacion" Precision="3" />
+          <Property Type="String" Name="UsuarioCrea" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="FechaCrea" Nullable="false" Precision="3" />
+          <Property Type="String" Name="UsuarioModifica" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="FechaModifica" Precision="3" />
+          <NavigationProperty Name="DamandasAbogados" Relationship="ModelEntities.FK_DamandasAbogados_Demandas" FromRole="Demandas" ToRole="DamandasAbogados" />
+        </EntityType>
+        <EntityType Name="Etapas">
+          <Key>
+            <PropertyRef Name="IdEtapa" />
+          </Key>
+          <Property Type="Int32" Name="IdEtapa" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="FechaCreate" Nullable="false" Precision="0" />
+          <NavigationProperty Name="EtapasDemandas" Relationship="ModelEntities.FK_EtapasDemandas_Etapas" FromRole="Etapas" ToRole="EtapasDemandas" />
+        </EntityType>
+        <EntityType Name="EtapasDemandas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="IdEtapa" Nullable="false" />
+          <Property Type="Int32" Name="IdDemanda" Nullable="false" />
+          <NavigationProperty Name="Etapas" Relationship="ModelEntities.FK_EtapasDemandas_Etapas" FromRole="EtapasDemandas" ToRole="Etapas" />
+        </EntityType>
+        <Association Name="FK_Membresia_Usuario">
+          <End Type="ModelEntities.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="ModelEntities.Membresia" Role="Membresia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UsuarioId" />
+            </Principal>
+            <Dependent Role="Membresia">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Perfil_Usuario">
+          <End Type="ModelEntities.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="ModelEntities.Perfil" Role="Perfil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UsuarioId" />
+            </Principal>
+            <Dependent Role="Perfil">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RolPropiedad_Propiedad">
+          <End Type="ModelEntities.Propiedad" Role="Propiedad" Multiplicity="1" />
+          <End Type="ModelEntities.RolPropiedad" Role="RolPropiedad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Propiedad">
+              <PropertyRef Name="PropiedadId" />
+            </Principal>
+            <Dependent Role="RolPropiedad">
+              <PropertyRef Name="PropiedadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ValorPropiedad_Propiedad">
+          <End Type="ModelEntities.Propiedad" Role="Propiedad" Multiplicity="1" />
+          <End Type="ModelEntities.ValorPropiedad" Role="ValorPropiedad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Propiedad">
+              <PropertyRef Name="PropiedadId" />
+            </Principal>
+            <Dependent Role="ValorPropiedad">
+              <PropertyRef Name="PropiedadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RolPropiedad_Rol">
+          <End Type="ModelEntities.Rol" Role="Rol" Multiplicity="1" />
+          <End Type="ModelEntities.RolPropiedad" Role="RolPropiedad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="RolId" />
+            </Principal>
+            <Dependent Role="RolPropiedad">
+              <PropertyRef Name="RolId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RolUsuario_Rol">
+          <End Type="ModelEntities.Rol" Role="Rol" Multiplicity="1" />
+          <End Type="ModelEntities.RolUsuario" Role="RolUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="RolId" />
+            </Principal>
+            <Dependent Role="RolUsuario">
+              <PropertyRef Name="RolId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RolUsuario_Usuario">
+          <End Type="ModelEntities.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="ModelEntities.RolUsuario" Role="RolUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UsuarioId" />
+            </Principal>
+            <Dependent Role="RolUsuario">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ValorPropiedad_Usuario">
+          <End Type="ModelEntities.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="ModelEntities.ValorPropiedad" Role="ValorPropiedad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UsuarioId" />
+            </Principal>
+            <Dependent Role="ValorPropiedad">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DamandasAbogados_Abogados">
+          <End Type="ModelEntities.Abogados" Role="Abogados" Multiplicity="1" />
+          <End Type="ModelEntities.DamandasAbogados" Role="DamandasAbogados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Abogados">
+              <PropertyRef Name="IdAbogado" />
+            </Principal>
+            <Dependent Role="DamandasAbogados">
+              <PropertyRef Name="IdAbogado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DamandasAbogados_Demandas">
+          <End Type="ModelEntities.Demandas" Role="Demandas" Multiplicity="1" />
+          <End Type="ModelEntities.DamandasAbogados" Role="DamandasAbogados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Demandas">
+              <PropertyRef Name="IdDemanda" />
+            </Principal>
+            <Dependent Role="DamandasAbogados">
+              <PropertyRef Name="IdDemanda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EtapasDemandas_Etapas">
+          <End Type="ModelEntities.Etapas" Role="Etapas" Multiplicity="1" />
+          <End Type="ModelEntities.EtapasDemandas" Role="EtapasDemandas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Etapas">
+              <PropertyRef Name="IdEtapa" />
+            </Principal>
+            <Dependent Role="EtapasDemandas">
+              <PropertyRef Name="IdEtapa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="ModelEntities" />
+        <Alias Key="Target" Value="ModelEntities.Store" />
+        <EntityContainerMapping CdmEntityContainer="ModelEntitiesContainer" StorageEntityContainer="ModelEntitiesStoreContainer">
+          <EntitySetMapping Name="Aplicacion">
+            <EntityTypeMapping TypeName="ModelEntities.Aplicacion">
+              <MappingFragment StoreEntitySet="Aplicacion">
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="AplicacionId" ColumnName="AplicacionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ErrorAplicacion">
+            <EntityTypeMapping TypeName="ModelEntities.ErrorAplicacion">
+              <MappingFragment StoreEntitySet="ErrorAplicacion">
+                <ScalarProperty Name="Registrado" ColumnName="Registrado" />
+                <ScalarProperty Name="Interna" ColumnName="Interna" />
+                <ScalarProperty Name="Excepcion" ColumnName="Excepcion" />
+                <ScalarProperty Name="Error" ColumnName="Error" />
+                <ScalarProperty Name="Aplicacion" ColumnName="Aplicacion" />
+                <ScalarProperty Name="ErrorAplicacionId" ColumnName="ErrorAplicacionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Membresia">
+            <EntityTypeMapping TypeName="ModelEntities.Membresia">
+              <MappingFragment StoreEntitySet="Membresia">
+                <ScalarProperty Name="Registrado" ColumnName="Registrado" />
+                <ScalarProperty Name="UltimoBloqueo" ColumnName="UltimoBloqueo" />
+                <ScalarProperty Name="EstaBloqueado" ColumnName="EstaBloqueado" />
+                <ScalarProperty Name="EstaAprobado" ColumnName="EstaAprobado" />
+                <ScalarProperty Name="InicioIntentosFallidosPregunta" ColumnName="InicioIntentosFallidosPregunta" />
+                <ScalarProperty Name="CantidadIntentosFallidosPregunta" ColumnName="CantidadIntentosFallidosPregunta" />
+                <ScalarProperty Name="InicioIntentosFallidosPassword" ColumnName="InicioIntentosFallidosPassword" />
+                <ScalarProperty Name="CantidadIntentosFallidosPassword" ColumnName="CantidadIntentosFallidosPassword" />
+                <ScalarProperty Name="UltimoCambioDePassword" ColumnName="UltimoCambioDePassword" />
+                <ScalarProperty Name="UltimaSesion" ColumnName="UltimaSesion" />
+                <ScalarProperty Name="UltimaActividad" ColumnName="UltimaActividad" />
+                <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+                <ScalarProperty Name="RespuestaPassword" ColumnName="RespuestaPassword" />
+                <ScalarProperty Name="PreguntaPassword" ColumnName="PreguntaPassword" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="AplicacionId" ColumnName="AplicacionId" />
+                <ScalarProperty Name="MembresiaId" ColumnName="MembresiaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Perfil">
+            <EntityTypeMapping TypeName="ModelEntities.Perfil">
+              <MappingFragment StoreEntitySet="Perfil">
+                <ScalarProperty Name="UltimaActualizacion" ColumnName="UltimaActualizacion" />
+                <ScalarProperty Name="UltimaActividad" ColumnName="UltimaActividad" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="AplicacionId" ColumnName="AplicacionId" />
+                <ScalarProperty Name="PerfilId" ColumnName="PerfilId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Propiedad">
+            <EntityTypeMapping TypeName="ModelEntities.Propiedad">
+              <MappingFragment StoreEntitySet="Propiedad">
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="PropiedadId" ColumnName="PropiedadId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rol">
+            <EntityTypeMapping TypeName="ModelEntities.Rol">
+              <MappingFragment StoreEntitySet="Rol">
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="AplicacionId" ColumnName="AplicacionId" />
+                <ScalarProperty Name="RolId" ColumnName="RolId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RolPropiedad">
+            <EntityTypeMapping TypeName="ModelEntities.RolPropiedad">
+              <MappingFragment StoreEntitySet="RolPropiedad">
+                <ScalarProperty Name="PropiedadId" ColumnName="PropiedadId" />
+                <ScalarProperty Name="RolId" ColumnName="RolId" />
+                <ScalarProperty Name="RolPropiedadId" ColumnName="RolPropiedadId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RolUsuario">
+            <EntityTypeMapping TypeName="ModelEntities.RolUsuario">
+              <MappingFragment StoreEntitySet="RolUsuario">
+                <ScalarProperty Name="RolId" ColumnName="RolId" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="RolUsuarioId" ColumnName="RolUsuarioId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SiteMap">
+            <EntityTypeMapping TypeName="ModelEntities.SiteMap">
+              <MappingFragment StoreEntitySet="SiteMap">
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="PadreId" ColumnName="PadreId" />
+                <ScalarProperty Name="Roles" ColumnName="Roles" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+                <ScalarProperty Name="AplicacionId" ColumnName="AplicacionId" />
+                <ScalarProperty Name="SiteMapId" ColumnName="SiteMapId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="ModelEntities.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="ProviderUserKey" ColumnName="ProviderUserKey" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ValorPropiedad">
+            <EntityTypeMapping TypeName="ModelEntities.ValorPropiedad">
+              <MappingFragment StoreEntitySet="ValorPropiedad">
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="PropiedadId" ColumnName="PropiedadId" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Abogados">
+            <EntityTypeMapping TypeName="ModelEntities.Abogados">
+              <MappingFragment StoreEntitySet="Abogados">
+                <ScalarProperty Name="FechaModifica" ColumnName="FechaModifica" />
+                <ScalarProperty Name="UsuarioModifica" ColumnName="UsuarioModifica" />
+                <ScalarProperty Name="FechaCrea" ColumnName="FechaCrea" />
+                <ScalarProperty Name="UsuarioCrea" ColumnName="UsuarioCrea" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telefono2" ColumnName="Telefono2" />
+                <ScalarProperty Name="Telefono1" ColumnName="Telefono1" />
+                <ScalarProperty Name="TarjetaProfesional" ColumnName="TarjetaProfesional" />
+                <ScalarProperty Name="CiudadExpedicion" ColumnName="CiudadExpedicion" />
+                <ScalarProperty Name="NumeroIdentificacion" ColumnName="NumeroIdentificacion" />
+                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="IdAbogado" ColumnName="IdAbogado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DamandasAbogados">
+            <EntityTypeMapping TypeName="ModelEntities.DamandasAbogados">
+              <MappingFragment StoreEntitySet="DamandasAbogados">
+                <ScalarProperty Name="FechaModifica" ColumnName="FechaModifica" />
+                <ScalarProperty Name="UsuarioModifica" ColumnName="UsuarioModifica" />
+                <ScalarProperty Name="FechaCrea" ColumnName="FechaCrea" />
+                <ScalarProperty Name="UsuarioCrea" ColumnName="UsuarioCrea" />
+                <ScalarProperty Name="IdDemanda" ColumnName="IdDemanda" />
+                <ScalarProperty Name="IdAbogado" ColumnName="IdAbogado" />
+                <ScalarProperty Name="IdDemandaAbogado" ColumnName="IdDemandaAbogado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Demandas">
+            <EntityTypeMapping TypeName="ModelEntities.Demandas">
+              <MappingFragment StoreEntitySet="Demandas">
+                <ScalarProperty Name="FechaModifica" ColumnName="FechaModifica" />
+                <ScalarProperty Name="UsuarioModifica" ColumnName="UsuarioModifica" />
+                <ScalarProperty Name="FechaCrea" ColumnName="FechaCrea" />
+                <ScalarProperty Name="UsuarioCrea" ColumnName="UsuarioCrea" />
+                <ScalarProperty Name="Fechacontestacion" ColumnName="Fechacontestacion" />
+                <ScalarProperty Name="NumeroProceso" ColumnName="NumeroProceso" />
+                <ScalarProperty Name="FechaAdicion" ColumnName="FechaAdicion" />
+                <ScalarProperty Name="FechaRadicacion" ColumnName="FechaRadicacion" />
+                <ScalarProperty Name="NombreDemanda" ColumnName="NombreDemanda" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="IdDemanda" ColumnName="IdDemanda" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Etapas">
+            <EntityTypeMapping TypeName="ModelEntities.Etapas">
+              <MappingFragment StoreEntitySet="Etapas">
+                <ScalarProperty Name="FechaCreate" ColumnName="FechaCreate" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="IdEtapa" ColumnName="IdEtapa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EtapasDemandas">
+            <EntityTypeMapping TypeName="ModelEntities.EtapasDemandas">
+              <MappingFragment StoreEntitySet="EtapasDemandas">
+                <ScalarProperty Name="IdDemanda" ColumnName="IdDemanda" />
+                <ScalarProperty Name="IdEtapa" ColumnName="IdEtapa" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2caeea3da1f8487bb2f309fdbb82b620" Name="Diagram1" ZoomLevel="16" >
+        <EntityTypeShape EntityType="ModelEntities.Aplicacion" Width="1.5" PointX="7.6561744453647052" PointY="25.533176448910115" />
+        <EntityTypeShape EntityType="ModelEntities.ErrorAplicacion" Width="1.5" PointX="2.8248441251110492" PointY="30.502297862666797" />
+        <EntityTypeShape EntityType="ModelEntities.Membresia" Width="1.5" PointX="4.27463173692796" PointY="25.53974164721544" />
+        <EntityTypeShape EntityType="ModelEntities.Perfil" Width="1.5" PointX="5.6128293283343451" PointY="27.351075363974587" />
+        <EntityTypeShape EntityType="ModelEntities.Propiedad" Width="1.5" PointX="6.095770689703417" PointY="14.95268694262611" />
+        <EntityTypeShape EntityType="ModelEntities.Rol" Width="1.5" PointX="4.4391190653849018" PointY="13.988191447215243" />
+        <EntityTypeShape EntityType="ModelEntities.RolPropiedad" Width="1.5" PointX="11.600112374685757" PointY="31.196974485738657" />
+        <EntityTypeShape EntityType="ModelEntities.RolUsuario" Width="1.5" PointX="1.9219703254857894" PointY="28.496636538066266" />
+        <EntityTypeShape EntityType="ModelEntities.SiteMap" Width="1.5" PointX="7.6136952003527867" PointY="19.113993191679004" />
+        <EntityTypeShape EntityType="ModelEntities.Usuario" Width="1.5" PointX="10.169061568644393" PointY="31.195672586185704" />
+        <EntityTypeShape EntityType="ModelEntities.ValorPropiedad" Width="1.5" PointX="10.524513987137244" PointY="17.655988030906762" />
+        <EntityTypeShape EntityType="ModelEntities.Abogados" Width="1.5" PointX="2.0775374034780718" PointY="26.180091914804695" />
+        <EntityTypeShape EntityType="ModelEntities.DamandasAbogados" Width="1.5" PointX="11.028612965265575" PointY="14.263517326798064" />
+        <EntityTypeShape EntityType="ModelEntities.Demandas" Width="1.5" PointX="6.6579911534944518" PointY="11.444456359112849" />
+        <EntityTypeShape EntityType="ModelEntities.Etapas" Width="1.5" PointX="3.0713383122679492" PointY="19.111213335353515" />
+        <EntityTypeShape EntityType="ModelEntities.EtapasDemandas" Width="1.5" PointX="8.22953561517854" PointY="18.162718364113346" />
+        <AssociationConnector Association="ModelEntities.FK_Membresia_Usuario" />
+        <AssociationConnector Association="ModelEntities.FK_Perfil_Usuario" />
+        <AssociationConnector Association="ModelEntities.FK_RolPropiedad_Propiedad" />
+        <AssociationConnector Association="ModelEntities.FK_ValorPropiedad_Propiedad" />
+        <AssociationConnector Association="ModelEntities.FK_RolPropiedad_Rol" />
+        <AssociationConnector Association="ModelEntities.FK_RolUsuario_Rol" />
+        <AssociationConnector Association="ModelEntities.FK_RolUsuario_Usuario" />
+        <AssociationConnector Association="ModelEntities.FK_ValorPropiedad_Usuario" />
+        <AssociationConnector Association="ModelEntities.FK_DamandasAbogados_Abogados" />
+        <AssociationConnector Association="ModelEntities.FK_DamandasAbogados_Demandas" />
+        <AssociationConnector Association="ModelEntities.FK_EtapasDemandas_Etapas" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

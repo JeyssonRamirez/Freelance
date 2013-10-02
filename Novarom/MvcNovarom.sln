@@ -1,0 +1,87 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Presentation", "1-Presentation", "{FA0C1430-EADA-49A7-83E5-0BFFD65E5F0D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Servicio", "2-Servicio", "{A86F6A9E-08B2-428F-A5EA-13C6E03FE287}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Dominio", "3-Dominio", "{90C3755A-028F-4428-95AE-E1F92A41C0F1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-AccesoaDatos", "4-AccesoaDatos", "{EFEB7FAB-DF69-48F5-A43E-210E4A51F079}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5-Trasnversales", "5-Trasnversales", "{A4CC3E1F-1412-4A62-85E7-17167557FE44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infraestructura.Transversales.Proveedores", "Infraestructura.Transversales.Proveedores\Infraestructura.Transversales.Proveedores.csproj", "{AEBFBB20-805B-44D4-8531-1FF4D81A4448}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Domain", "App.Domain\App.Domain.csproj", "{218DF437-6148-4B22-8A22-0E17B6436860}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.DataAccess", "DataAccess\App.DataAccess.csproj", "{DC9923E5-3C45-4F62-8356-6270DD1E351A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Services", "App.Services\App.Services.csproj", "{81F3861F-E920-4AF5-AF9B-3EB0EBDCC9A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentacion.Mvc", "Presentacion.Mvc\Presentacion.Mvc.csproj", "{657EB603-B3A3-46EF-B83B-5BA92BB6F2D7}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://webnet.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Infraestructura.Transversales.Proveedores\\Infraestructura.Transversales.Proveedores.csproj
+		SccProjectTopLevelParentUniqueName1 = MvcNovarom.sln
+		SccProjectName1 = Infraestructura.Transversales.Proveedores
+		SccLocalPath1 = Infraestructura.Transversales.Proveedores
+		SccProjectUniqueName2 = App.Domain\\App.Domain.csproj
+		SccProjectTopLevelParentUniqueName2 = MvcNovarom.sln
+		SccProjectName2 = App.Domain
+		SccLocalPath2 = App.Domain
+		SccProjectUniqueName3 = DataAccess\\App.DataAccess.csproj
+		SccProjectTopLevelParentUniqueName3 = MvcNovarom.sln
+		SccProjectName3 = DataAccess
+		SccLocalPath3 = DataAccess
+		SccProjectUniqueName4 = App.Services\\App.Services.csproj
+		SccProjectTopLevelParentUniqueName4 = MvcNovarom.sln
+		SccProjectName4 = App.Services
+		SccLocalPath4 = App.Services
+		SccProjectUniqueName5 = Presentacion.Mvc\\Presentacion.Mvc.csproj
+		SccProjectTopLevelParentUniqueName5 = MvcNovarom.sln
+		SccProjectName5 = Presentacion.Mvc
+		SccLocalPath5 = Presentacion.Mvc
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AEBFBB20-805B-44D4-8531-1FF4D81A4448}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEBFBB20-805B-44D4-8531-1FF4D81A4448}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEBFBB20-805B-44D4-8531-1FF4D81A4448}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEBFBB20-805B-44D4-8531-1FF4D81A4448}.Release|Any CPU.Build.0 = Release|Any CPU
+		{218DF437-6148-4B22-8A22-0E17B6436860}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{218DF437-6148-4B22-8A22-0E17B6436860}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{218DF437-6148-4B22-8A22-0E17B6436860}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{218DF437-6148-4B22-8A22-0E17B6436860}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC9923E5-3C45-4F62-8356-6270DD1E351A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC9923E5-3C45-4F62-8356-6270DD1E351A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC9923E5-3C45-4F62-8356-6270DD1E351A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC9923E5-3C45-4F62-8356-6270DD1E351A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81F3861F-E920-4AF5-AF9B-3EB0EBDCC9A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81F3861F-E920-4AF5-AF9B-3EB0EBDCC9A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81F3861F-E920-4AF5-AF9B-3EB0EBDCC9A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81F3861F-E920-4AF5-AF9B-3EB0EBDCC9A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{657EB603-B3A3-46EF-B83B-5BA92BB6F2D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{657EB603-B3A3-46EF-B83B-5BA92BB6F2D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{657EB603-B3A3-46EF-B83B-5BA92BB6F2D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{657EB603-B3A3-46EF-B83B-5BA92BB6F2D7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{657EB603-B3A3-46EF-B83B-5BA92BB6F2D7} = {FA0C1430-EADA-49A7-83E5-0BFFD65E5F0D}
+		{81F3861F-E920-4AF5-AF9B-3EB0EBDCC9A9} = {A86F6A9E-08B2-428F-A5EA-13C6E03FE287}
+		{218DF437-6148-4B22-8A22-0E17B6436860} = {90C3755A-028F-4428-95AE-E1F92A41C0F1}
+		{DC9923E5-3C45-4F62-8356-6270DD1E351A} = {EFEB7FAB-DF69-48F5-A43E-210E4A51F079}
+		{AEBFBB20-805B-44D4-8531-1FF4D81A4448} = {A4CC3E1F-1412-4A62-85E7-17167557FE44}
+	EndGlobalSection
+EndGlobal
